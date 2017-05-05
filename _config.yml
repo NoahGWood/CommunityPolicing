@@ -1,3 +1,2 @@
 theme: jekyll-theme-tactile
-gems:
-  - jekyll-feed
+gems: jekyll-feed
