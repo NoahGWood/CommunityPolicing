@@ -1,0 +1,50 @@
+CLI:
+    Todo:
+        Create Main Program
+    InProgress:
+        Create Blockchain Module
+            found: /scripts/blockchain.py
+        Create Database Manager Module
+            found: /scripts/dbmanager.py
+        Create Settings Module
+            found: /scripts/settings.py
+        Create Logging/Debug Module
+            found: /scripts/loggerSetup.py
+    Done:
+
+GUI:
+    Todo:
+        Create GUI Module
+        Create Map Module
+        Create Settings Wizard
+    InProgress:
+        Create "Add New" Wizard
+            found: /scripts/GUI/wizardGUI.py
+        Create CLI/Backend
+            found: /scripts
+        Create Main Window
+            found: /scripts/GUI/mainGUI.py
+    Done:
+
+Installer:
+    Todo:
+        Create Installation Script For dpkg
+        Create Installation Script For Portage
+        Create Installation Script For yum
+        Create Installatino Script For Pacman
+    InProgress:
+    Done:
+
+Documentation:
+    Todo:
+        Create Documentation For Wizard Handler
+        Create Documentation For Logger
+        Create Documentation For Blockchain Manager
+        Create Documentation For Database Manager
+        Create Documentation For GUI Tools
+        Create Documentation For CLI Tools
+    InProgress:
+    Done:
+
+
+
