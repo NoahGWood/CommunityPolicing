@@ -1,8 +1,9 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QApplication, QWidget, QCheckBox, QFileDialog
 from PyQt5.QtGui import *
-from wizardGUI import Ui_Wizard
+from GUI.wizardGUI import Ui_Wizard
 import sys
+
 
 
 class my_wizard(QtWidgets.QWizard, Ui_Wizard):
