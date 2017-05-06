@@ -1,5 +1,3 @@
-import sys
-
 def ReadSettings():
     import configparser
     config = configparser.ConfigParser()
@@ -9,46 +7,38 @@ def ReadSettings():
         dbset = config['DATABASE']
         del configparser
     else:
-        log("Settings File Not Found.")
+        import datetime
+        with open('/logs/dbmanager.log', 'w') as log:
+            log.write(str(datetime.datetime.now()) + '- Settings File Not Found.')
+            Alert("Error: See Logs (CommunityPolicing/logs/dbmanager.log)")
 
 def DBConnection():
     if dbset['DBServer'] not in ['localhost']:
         print("This feature not yet implemented")
     else:
+        global command
         command=("mysql -u" + dbset['DBUser'] + " -p" + dbset['DBPass'] + ' ' + dbset['DBName'] + " ")
-        return(command)
+        print(command)
     
-def Log(cmd,e):
-    return(loggerSetup.main(1,"CRITICAL",str(cmd)+' | ' + str(e)))
+def Import(file):
+    return(command + '< ' + file)
 
-def Import(files):
-    cmd = command+'< '+files+';'
-    return(cmd)
-
-def Export(files):
-    cmd=command+'> '+files+';'
-    return(cmd)
+def Export(file):
+    return(command + '> ' + file)
     
-def AddEntry(table,references,values):
-    cmd=command+' INSERT INTO {0} ({1}) VALUES ({2});'.format(str(table),str(references),str(values)
-    return(cmd)
+def AddEntry():
+    return
 
-def DelEntry(table,references,values):
-    cmd=command+' DELETE FROM {0} WHERE {1} = {2};'.format(str(table),str(references),str(values)
-    return(cmd)
-                                                             
+def DelEntry():
+    return
+
+def Alert(string):
+    return(string)
+
 def Run(cmd):
-    import subprocess
-    try:
-        subprocess.check_call(cmd)
-    except Exception as e:
-        log(cmd,e)
-                                                           
-def main(inputs):
-    import loggerSetup
-    loggerSetup.main(1,'DEBUG','Init')
-    ReadSettings()
-    DBConnection()
+    return
+
+def Main(inputs):
     if '-h' in inputs:
         print('-h help file')
         print('-import database.sql')
@@ -73,15 +63,14 @@ def main(inputs):
             pass
     elif '-add' in inputs:
         inputs = ''
-        return(inputs)
+        return
     elif '-del' in inputs:
         inputs = ''
-        return(inputs)
-    else:
-        try:
-            return(command + " " + inputs)
-        except Exception as e:
-            log(inputs,e)
+        return
 
-if __name__ == "__main__":
-    main(sys.argv[1])
+ReadSettings()
+DBConnection()
+i = 1
+while i > 0:
+    Main(input())
+#Main('-e name.sql')
