@@ -1,3 +1,4 @@
+#! /usr/bin/python3
 import loggerSetup
 import peewee
 from peewee import *

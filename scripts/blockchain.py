@@ -1,4 +1,4 @@
-
+#! /usr/bin/python3
 def GetStream():
     #Create Multichain Script
     #Export Metadata from Stream

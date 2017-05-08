@@ -1,43 +1,38 @@
+#! /usr/bin/python3
 import sys
 import logging
 import logging.config
 
 # to call use:
-#    import loggerSetup
-#    loggerSetup.(1,debug,'debug message')
-# or loggerSetup.logDBManager(debug,'debug message')
-
-#    loggerSetup(1,info,'info message')
-#    loggerSetup(1,warn,'warn message')
-#    loggerSetup(1,error,'error message')
-#    loggerSetup(1,critical,'critical message')
+#   import loggerSetup
+#   def log(level,e):
+#       script = __file__
+#       loggerSetup.main(script,level,str(e))
+#   log('DEBUG','your error')
 logging.config.fileConfig('../logs/logging.ini')
 logger = logging.getLogger('default')
 
 
-def log(level,message,script):
-    if level == 'DEBUG':
-        logger.debug(' ' + str("Triggered By: ") + script + str(message))
-    if level == 'INFO':
-        logger.info(' ' + str("Triggered By: ") + script + str(message))
-    if level == 'WARN':
-        logger.warn(' ' + str("Triggered By: ") + script + str(message))
-    if level == 'ERROR':
-        logger.error(' ' + str("Triggered By: ") + script + str(message))
-    if level == 'CRITICAL':
-        logger.critical(' ' + str("Triggered By: ") + script + str(message))
 
+def log(script,level,message):
+    print(' Unknown error Triggered by {0} | {1}'.format(script,message))
+    if level in ['D','d','DEBUG','debug','Debug']:
+        logger.debug(" Triggered By: " + script + ' ' + str(message))
+    if level in ['I','i','INFO','info','Info']:
+        logger.info(" Triggered By: " + script + ' ' + str(message))
+    if level in ['W','w','WARN','warn','Warn']:
+        logger.warn("Triggered By: " + script + ' ' + str(message))
+    if level in ['E','e','ERROR','error','Error']:
+        logger.error("Triggered By: " + script + ' ' + str(message))
+    if level in ['C','c','CRITICAL','critical','Critical']:
+        logger.critical(" Triggered By: " + script + ' ' + str(message))
+    logger.fatal(' Unknown error Triggered by {0} | {1}'.format(script,message))
+        
+def xcept(e):
+    logger.exception(e)
+                     
 def main(arg1,arg2,arg3):
-    level = arg2
-    message = arg3
-    if arg1 == 0:
-        log('dbmanager.py',level,message)
-    elif arg1 == 1:
-        log('wizardHandler.py',arg2,arg3)
-    elif arg1 == 2:
-        log('blockchain.py',arg2,arg3)        
-    else:
-        log('other',arg2,arg3)
+    log(arg1,arg2,arg3)
 
 if __name__ == "__main__":
     main(sys.argv[1],sys.argv[2],sys.argv[3])
