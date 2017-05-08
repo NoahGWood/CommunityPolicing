@@ -1,0 +1,963 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Wizard</class>
+ <widget class="QWizard" name="Wizard">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>637</width>
+    <height>595</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Wizard</string>
+  </property>
+  <property name="sizeGripEnabled">
+   <bool>false</bool>
+  </property>
+  <property name="modal">
+   <bool>false</bool>
+  </property>
+  <property name="wizardStyle">
+   <enum>QWizard::AeroStyle</enum>
+  </property>
+  <property name="options">
+   <set>QWizard::ExtendedWatermarkPixmap|QWizard::HaveCustomButton1|QWizard::IndependentPages</set>
+  </property>
+  <widget class="QWizardPage" name="wizardPage1Individual">
+   <layout class="QFormLayout" name="formLayout">
+    <item row="0" column="0">
+     <widget class="QLabel" name="label_15">
+      <property name="text">
+       <string>First Name:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QLineEdit" name="indFName">
+      <property name="placeholderText">
+       <string>Suspect First Name (If Known)</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="label_14">
+      <property name="text">
+       <string>Last Name:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QLineEdit" name="indLName">
+      <property name="placeholderText">
+       <string>Suspect Last Name (If Known)</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QLabel" name="label_4">
+      <property name="text">
+       <string>Alias:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QLineEdit" name="indAlias">
+      <property name="placeholderText">
+       <string>Suspect Alias</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QLabel" name="label_19">
+      <property name="text">
+       <string>Associates:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QLineEdit" name="indAssociates">
+      <property name="placeholderText">
+       <string>John Doe, Jane Doe, etc.</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="0">
+     <widget class="QLabel" name="label_20">
+      <property name="text">
+       <string>Phone:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="1">
+     <widget class="QLineEdit" name="indPhone">
+      <property name="placeholderText">
+       <string>Phone Number</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="0">
+     <widget class="QLabel" name="label_17">
+      <property name="text">
+       <string>State:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="1">
+     <widget class="QLineEdit" name="insState">
+      <property name="placeholderText">
+       <string>State</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="0">
+     <widget class="QLabel" name="label_16">
+      <property name="text">
+       <string>City:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="1">
+     <widget class="QLineEdit" name="indCity">
+      <property name="placeholderText">
+       <string>City</string>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="1">
+     <widget class="QLineEdit" name="indZip">
+      <property name="placeholderText">
+       <string>E-mail Address</string>
+      </property>
+     </widget>
+    </item>
+    <item row="10" column="0">
+     <widget class="QLabel" name="label_2">
+      <property name="text">
+       <string>Organizations:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="11" column="0">
+     <widget class="QLabel" name="label_5">
+      <property name="text">
+       <string>Ethnicity:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="11" column="1">
+     <widget class="QComboBox" name="indComboBoxEthnicity">
+      <property name="currentText">
+       <string>White (cuck)</string>
+      </property>
+      <item>
+       <property name="text">
+        <string>White (cuck)</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Asian (fish eye, gook)</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Mexican (gotta go back)</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Black (nigger)</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Jewish (kike)</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item row="12" column="0">
+     <widget class="QLabel" name="label_6">
+      <property name="text">
+       <string>Description:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="12" column="1">
+     <widget class="QLineEdit" name="indDescription">
+      <property name="placeholderText">
+       <string>Short Description Of Perp</string>
+      </property>
+     </widget>
+    </item>
+    <item row="13" column="0">
+     <widget class="QLabel" name="label_3">
+      <property name="text">
+       <string>Links:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="13" column="1">
+     <widget class="QLineEdit" name="indLinks">
+      <property name="placeholderText">
+       <string>Comma Separated (.e.g. facebook.com, archive.is, google.com)</string>
+      </property>
+     </widget>
+    </item>
+    <item row="14" column="0">
+     <widget class="QLabel" name="label_21">
+      <property name="text">
+       <string>Video/Images</string>
+      </property>
+     </widget>
+    </item>
+    <item row="14" column="1">
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QPushButton" name="indAddWebBtn">
+        <property name="text">
+         <string>Add From File</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="indAddFileBtn">
+        <property name="text">
+         <string>Add From Web</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="15" column="0">
+     <widget class="QLabel" name="label_7">
+      <property name="text">
+       <string>Comments:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="15" column="1">
+     <widget class="QLineEdit" name="indComments">
+      <property name="placeholderText">
+       <string>Any Additional Comments/Info</string>
+      </property>
+     </widget>
+    </item>
+    <item row="10" column="1">
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QLineEdit" name="lineEdit">
+        <property name="placeholderText">
+         <string>Type Here Or Select From Dropdown</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="indOrganizations"/>
+      </item>
+     </layout>
+    </item>
+    <item row="8" column="0">
+     <widget class="QLabel" name="label_12">
+      <property name="text">
+       <string>e-mail</string>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="0">
+     <widget class="QLabel" name="label_8">
+      <property name="text">
+       <string>Address:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="1">
+     <widget class="QLineEdit" name="indAddress">
+      <property name="placeholderText">
+       <string>Street Address</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWizardPage" name="wizardPage1Group">
+   <layout class="QFormLayout" name="formLayout_2">
+    <item row="0" column="0">
+     <widget class="QLabel" name="label_32">
+      <property name="text">
+       <string>Group Name:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QLineEdit" name="groupName">
+      <property name="placeholderText">
+       <string>Suspect First Name (If Known)</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="label_25">
+      <property name="text">
+       <string>Affiliates</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QLineEdit" name="groupAffiliates">
+      <property name="placeholderText">
+       <string>John Doe, Jane Doe, etc.</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QLabel" name="label_27">
+      <property name="text">
+       <string>Members</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QLabel" name="label_24">
+      <property name="text">
+       <string>Phone:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QLineEdit" name="groupPhone">
+      <property name="placeholderText">
+       <string>Phone Number</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="0">
+     <widget class="QLabel" name="label_26">
+      <property name="text">
+       <string>State:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="1">
+     <widget class="QLineEdit" name="groupState">
+      <property name="placeholderText">
+       <string>State</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="0">
+     <widget class="QLabel" name="label_36">
+      <property name="text">
+       <string>City:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="1">
+     <widget class="QLineEdit" name="groupCity">
+      <property name="placeholderText">
+       <string>City</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="0">
+     <widget class="QLabel" name="label_34">
+      <property name="text">
+       <string>Zip:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="1">
+     <widget class="QLineEdit" name="groupZip">
+      <property name="placeholderText">
+       <string>Zipcode</string>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="0">
+     <widget class="QLabel" name="label_30">
+      <property name="text">
+       <string>Address:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="1">
+     <widget class="QLineEdit" name="groupAddress">
+      <property name="placeholderText">
+       <string>Street Address</string>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="0">
+     <widget class="QLabel" name="label_35">
+      <property name="text">
+       <string>Donors</string>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="1">
+     <widget class="QLineEdit" name="groupDonors">
+      <property name="placeholderText">
+       <string>Commas Separated (e.g. Max Weinstein, Joe Hanson, etc.)</string>
+      </property>
+     </widget>
+    </item>
+    <item row="9" column="0">
+     <widget class="QLabel" name="label_22">
+      <property name="text">
+       <string>NonProfit</string>
+      </property>
+     </widget>
+    </item>
+    <item row="9" column="1">
+     <widget class="QComboBox" name="groupComboNonprofit">
+      <property name="currentText">
+       <string>Yes</string>
+      </property>
+      <item>
+       <property name="text">
+        <string>Yes</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Yes: 501.3c</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>No</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item row="10" column="0">
+     <widget class="QLabel" name="label_37">
+      <property name="text">
+       <string>Description:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="10" column="1">
+     <widget class="QLineEdit" name="groupDescription">
+      <property name="placeholderText">
+       <string>Short Description Of group</string>
+      </property>
+     </widget>
+    </item>
+    <item row="11" column="0">
+     <widget class="QLabel" name="label_29">
+      <property name="text">
+       <string>Website</string>
+      </property>
+     </widget>
+    </item>
+    <item row="11" column="1">
+     <widget class="QLineEdit" name="links_2">
+      <property name="placeholderText">
+       <string>Comma Separated (.e.g. facebook.com, archive.is, google.com)</string>
+      </property>
+     </widget>
+    </item>
+    <item row="12" column="0">
+     <widget class="QLabel" name="label_28">
+      <property name="text">
+       <string>Video/Images</string>
+      </property>
+     </widget>
+    </item>
+    <item row="12" column="1">
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QPushButton" name="groupAddFile">
+        <property name="text">
+         <string>Add From File</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="groupAddFromWeb">
+        <property name="text">
+         <string>Add From Web</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="13" column="0">
+     <widget class="QLabel" name="label_31">
+      <property name="text">
+       <string>Comments:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="13" column="1">
+     <widget class="QLineEdit" name="groupComments">
+      <property name="placeholderText">
+       <string>Any additional comments</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QComboBox" name="groupMembers">
+      <item>
+       <property name="text">
+        <string>(None)</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>New Person</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+   </layout>
+   <zorder>groupDescription</zorder>
+   <zorder>label_22</zorder>
+   <zorder>groupState</zorder>
+   <zorder>label_24</zorder>
+   <zorder>label_25</zorder>
+   <zorder>label_26</zorder>
+   <zorder>label_28</zorder>
+   <zorder>label_29</zorder>
+   <zorder>label_30</zorder>
+   <zorder>groupAffiliates</zorder>
+   <zorder>links_2</zorder>
+   <zorder>label_32</zorder>
+   <zorder>groupZip</zorder>
+   <zorder>groupCity</zorder>
+   <zorder>groupAddress</zorder>
+   <zorder>label_34</zorder>
+   <zorder>label_35</zorder>
+   <zorder>groupName</zorder>
+   <zorder>groupComboNonprofit</zorder>
+   <zorder>label_36</zorder>
+   <zorder>label_37</zorder>
+   <zorder>groupDonors</zorder>
+   <zorder>groupPhone</zorder>
+   <zorder>label_31</zorder>
+   <zorder>groupComments</zorder>
+   <zorder>label_27</zorder>
+   <zorder>groupMembers</zorder>
+  </widget>
+  <widget class="QWizardPage" name="wizardPage1Event">
+   <layout class="QFormLayout" name="formLayout_3">
+    <item row="0" column="0">
+     <widget class="QLabel" name="label_33">
+      <property name="text">
+       <string>Event:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QLineEdit" name="eventTitle"/>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="label_48">
+      <property name="text">
+       <string>First Name:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QLineEdit" name="eventFName">
+      <property name="placeholderText">
+       <string>Suspect First Name (If Known)</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QLabel" name="label_43">
+      <property name="text">
+       <string>Last Name:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QLineEdit" name="eventLName">
+      <property name="placeholderText">
+       <string>Suspect Last Name (If Known)</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QLabel" name="label_49">
+      <property name="text">
+       <string>Alias:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QLineEdit" name="eventAlias">
+      <property name="placeholderText">
+       <string>Suspect Alias</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="0">
+     <widget class="QLabel" name="label_41">
+      <property name="text">
+       <string>Associates:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="1">
+     <widget class="QLineEdit" name="eventAssociates">
+      <property name="placeholderText">
+       <string>John Doe, Jane Doe, etc.</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="0">
+     <widget class="QLabel" name="label_51">
+      <property name="text">
+       <string>Organizations:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="0">
+     <widget class="QLabel" name="label_53">
+      <property name="text">
+       <string>Description:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="1">
+     <widget class="QLineEdit" name="eventDescription">
+      <property name="placeholderText">
+       <string>Short description of perp</string>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="0">
+     <widget class="QLabel" name="label_45">
+      <property name="text">
+       <string>Links:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="1">
+     <widget class="QLineEdit" name="eventLinks">
+      <property name="placeholderText">
+       <string>Comma Separated (.e.g. facebook.com, archive.is, google.com)</string>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="0">
+     <widget class="QLabel" name="label_44">
+      <property name="text">
+       <string>Video/Images</string>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="1">
+     <layout class="QHBoxLayout" name="horizontalLayout_5">
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QPushButton" name="eventAddFileBtn">
+        <property name="text">
+         <string>Add From File</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="eventAddWebBtn">
+        <property name="text">
+         <string>Add From Web</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="9" column="0">
+     <widget class="QLabel" name="label_47">
+      <property name="text">
+       <string>Comments:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="9" column="1">
+     <widget class="QLineEdit" name="eventComments">
+      <property name="placeholderText">
+       <string>Any additional comments</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="1">
+     <layout class="QHBoxLayout" name="horizontalLayout_4">
+      <item>
+       <widget class="QLineEdit" name="eventOrgs"/>
+      </item>
+      <item>
+       <widget class="QComboBox" name="eventOrgsDisplay"/>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWizardPage" name="wizardPageCrime">
+   <layout class="QFormLayout" name="formLayout_4">
+    <item row="0" column="0">
+     <widget class="QLabel" name="label_9">
+      <property name="text">
+       <string>Perpetrator:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="label">
+      <property name="text">
+       <string>Crime:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QLineEdit" name="crimeCrime">
+      <property name="placeholderText">
+       <string>What Crime Occured?</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QLabel" name="label_10">
+      <property name="text">
+       <string>Links:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QLineEdit" name="eventLinks_2">
+      <property name="placeholderText">
+       <string>Comma Separated (.e.g. facebook.com, archive.is, google.com)</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QCheckBox" name="checkBox">
+      <property name="text">
+       <string>Auto Archive?</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="0">
+     <widget class="QLabel" name="label_11">
+      <property name="text">
+       <string>Date:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="1">
+     <widget class="QDateTimeEdit" name="dateTimeEdit"/>
+    </item>
+    <item row="5" column="0">
+     <widget class="QLabel" name="label_61">
+      <property name="text">
+       <string>Video/Images</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="1">
+     <layout class="QHBoxLayout" name="horizontalLayout_7">
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QPushButton" name="crimeAddWebBtn">
+        <property name="text">
+         <string>Add From Web</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="crimeAddFileBtn">
+        <property name="text">
+         <string>Add From File</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="6" column="0">
+     <widget class="QLabel" name="label_59">
+      <property name="text">
+       <string>Description:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="1">
+     <widget class="QLineEdit" name="eventCrime_2">
+      <property name="placeholderText">
+       <string>Description Of Crime</string>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="0">
+     <widget class="QLabel" name="label_66">
+      <property name="text">
+       <string>Comments:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="1">
+     <widget class="QLineEdit" name="crimeComments">
+      <property name="placeholderText">
+       <string>Any additional comments</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <layout class="QHBoxLayout" name="horizontalLayout_8">
+      <item>
+       <widget class="QLineEdit" name="crimePerp"/>
+      </item>
+      <item>
+       <widget class="QComboBox" name="comboBox"/>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWizardPage" name="wizardPage_3">
+   <widget class="QPushButton" name="runAllVideo_2">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>476</y>
+      <width>300</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="accessibleName">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Perform All Tests (recommended).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>Run All Tests</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="runFacialRecog_2">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>443</y>
+      <width>300</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="accessibleName">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Perform Facial Recognition On Images And Videos In Your Database.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>Run Facial Recognition</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="findOnline_2">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>410</y>
+      <width>300</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="accessibleName">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Search Your Databases And The Web For Image Matches.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>Reverse Image Search</string>
+    </property>
+   </widget>
+   <widget class="QListView" name="listView">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>10</y>
+      <width>611</width>
+      <height>381</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QWizardPage" name="wizardPage_2">
+   <layout class="QGridLayout" name="gridLayout_2">
+    <item row="3" column="4">
+     <widget class="QTableView" name="tableViewMatch"/>
+    </item>
+    <item row="2" column="0">
+     <widget class="QLabel" name="label_40">
+      <property name="text">
+       <string>Matches</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0" colspan="2">
+     <widget class="QGraphicsView" name="imageViewOrig"/>
+    </item>
+    <item row="3" column="0" colspan="2">
+     <widget class="QGraphicsView" name="imageViewMatch"/>
+    </item>
+    <item row="0" column="1">
+     <widget class="QLabel" name="label_55">
+      <property name="text">
+       <string>Remaining</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="4">
+     <widget class="QTableView" name="tableViewOrig"/>
+    </item>
+    <item row="0" column="4">
+     <widget class="QLCDNumber" name="lcdNumber_3">
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Sunken</enum>
+      </property>
+      <property name="digitCount">
+       <number>9</number>
+      </property>
+      <property name="intValue" stdset="0">
+       <number>999999999</number>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="4">
+     <layout class="QHBoxLayout" name="horizontalLayout_6">
+      <item>
+       <widget class="QPushButton" name="createNewBtn">
+        <property name="text">
+         <string>Create New</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="mergeBtn">
+        <property name="text">
+         <string>Append Existing</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
