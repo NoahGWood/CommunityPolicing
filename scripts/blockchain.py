@@ -1,6 +1,8 @@
 #! /usr/bin/python3
 import loggerSetup
 from Savoir import Savoir
+import sys
+arg = sys.argv
 
 def log(e):
     return(loggerSetup.main('blockchain.py',"CRITICAL",str(e)))
@@ -12,8 +14,6 @@ def settings():
     try:
         rpc = config['BLOCKCHAIN']
         del configparser
-        for i in rpc:
-            print(rpc[i])
         rpcuser = rpc['user']
         rpcpasswd = rpc['passwd']
         rpchost = rpc['host']
@@ -65,9 +65,11 @@ def createStream(name,is_open):
 def createFrom(from_address,name,is_open):
     try:
         api.create('{0} type=stream {1} {2}'.format(from_address,name,is_open))
+    except Exception as e:
+        return(e)
 
 def listStream():
-    return(api.liststreams(streams=*))
+    return(api.liststreams('streams=*'))
 
 def publishStream(stream,key,datahex):
     try:
@@ -113,7 +115,7 @@ def ping():
 
 def signMessage(address,message):
     try:
-        api.signmessage('{0} {1}'format(address,message))
+        api.signmessage('{0} {1}'.format(address,message))
     except Exception as e:
         return(e)
 def verMessage(address,signature,message):
@@ -134,8 +136,6 @@ def walletimport(filename):
     except Exception as e:
         return(e)
 
-def 
-
 
     
 def GetStream():
@@ -149,9 +149,16 @@ def GetStream():
 
 
 
-def main():
+def main(*argv):
     global api
     api = settings()
-    api.getinfo()
-    Utils('help',0,0)
-main()
+    if 'help' in argv:
+        Utils('help',0,0)
+    #there's gotta be a better way
+
+if __name__ in '__main__':
+    pass
+else:
+    import sys
+    argv = sys.argv
+    main(*argv)
