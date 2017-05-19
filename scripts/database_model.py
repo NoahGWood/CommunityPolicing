@@ -23,72 +23,66 @@ mysql_db = peewee.MySQLDatabase(dbset['DBName'],
 class MySQLModel(peewee.Model):
     class Meta:
         database = mysql_db
-        
-DeferredPerson = DeferredRelation()
-DeferredCrimes = DeferredRelation()
-DeferredPhotos = DeferredRelation()
-DeferredOrganization = DeferredRelation()
-DeferredArchives = DeferredRelation()
-DeferredEvents = DeferredRelation()
 
-class Person(MySQLModel):
-    FName = peewee.TextField()
-    LName = peewee.TextField()
-    Alias = peewee.TextField()
-    Address = peewee.TextField()
-    Phone = peewee.TextField()
-    Crimes = peewee.ForeignKeyField(DeferredCrimes, null=True)
-    Associates = peewee.TextField()
-    PPhotos = peewee.ForeignKeyField(DeferredPhotos, null=True)
-    Ethnicity = peewee.TextField()
-    Organizations = peewee.ForeignKeyField(DeferredOrganization, null=True)
-    State = peewee.TextField()
-    City = peewee.TextField()
-    Zipcode  = peewee.CharField()
+class Names(MySQLModel):
+    idNames = peewee.PrimaryKeyField()
+    FirstName = peewee.CharField(45)
+    LastName = peewee.CharField(45)
+    MiddleName = peewee.CharField(45)
+    OrgName = peewee.CharField(45)
 
-class Organization(MySQLModel):
-    Organization = peewee.TextField()
-    OPhotos = peewee.ForeignKeyField(DeferredPhotos, null=True)
-    Archives = ForeignKeyField(DeferredArchives, null=True)
-    Websties = peewee.TextField()
-    Status = peewee.TextField()
-    Affiliates = peewee.TextField()
-    Members = peewee.ForeignKeyField(Person)
-    Donors = peewee.TextField()
-    Address = peewee.TextField()
-    State = peewee.TextField()
-    City = peewee.TextField()
-    Events = peewee.ForeignKeyField(DeferredEvents, null=True)
-#    Crimes = peewee.ForeignKeyField(DeferredCrimes, null=True)
-    Nonprofit  = peewee.BooleanField(default=False)
+class Addresses(MySQLModel):
+    idAddress = peewee.PrimaryKeyField()
+    Address = peewee.CharField(45)
 
-class Events(MySQLModel):
-    Event = peewee.TextField()
-    Date = peewee.TextField()
-    Crimes = peewee.ForeignKeyField(DeferredCrimes, null=True)
-    EPhotos = peewee.ForeignKeyField(DeferredPhotos)
-    Archive = peewee.TextField()
-    ArchiveLoc = peewee.TextField()
-    State = peewee.TextField()
-    City = peewee.TextField()
-    Zipcode = peewee.TextField()
-    Organizations = peewee.ForeignKeyField(DeferredOrganization, null=True)
+class Phone(MySQLModel):
+    idPhone = peewee.PrimaryKeyField()
+    Phone = peewee.IntegerField()
+
+class Websites(MySQLModel):
+    idWebsites = peewee.PrimaryKeyField()
+    WebsiteURL = peewee.CharField(45)
+
+class Media(MySQLModel):
+    idMedia = peewee.PrimaryKeyField()
+    MediaDesc = peewee.TextField()
+    MediaPath = peewee.CharField(45)
+    MediaName = peewee.CharField(45)
+    MediaMIME = peewee.CharField(45)
+
+class GroupTypes(MySQLModel):
+    idGroupTypes = peewee.PrimaryKeyField()
+    GroupType = peewee.CharField(45)
+    TypeDescription = peewee.TextField()
 
 class Crimes(MySQLModel):
-    Crimes = peewee.TextField()
-    Date = DateTimeField()
+    idCrimes = peewee.PrimaryKeyField()
+    CrimesType = peewee.IntegerField()
+    Victims = peewee.CharField(45)
+    CrimeDescription = peewee.TextField()
+    CrimesMedia = peewee.ForeignKeyField(Media)
 
-class Photos(MySQLModel):
-    Photo = peewee.TextField()
-    FileLoc = peewee.TextField()
-    
-class Archives(MySQLModel):
-    Archives = peewee.TextField()
-    ArchiveLoc = peewee.TextField()
+class Groups(MySQLModel):
+    idGroups = peewee.PrimaryKeyField()
+    GroupName = peewee.IntegerField()
+    GroupTypeFK = peewee.ForeignKeyField(GroupTypes)
+    GroupMission = peewee.TextField()
 
-DeferredPerson.set_model(Person)
-DeferredCrimes.set_model(Crimes)
-DeferredPhotos.set_model(Photos)
-DeferredOrganization.set_model(Organization)
-DeferredArchives.set_model(Archives)
-DeferredEvents.set_model(Events)
+class GroupMem(MySQLModel):
+    idGroupMem = peewee.PrimaryKeyField()
+    GroupMember = peewee.ForeignKeyField(Names)
+    GroupName = peewee.ForeignKeyField(Names, related+name=)
+
+class Friends(MySQLModel):
+    idFriends = peewee.PrimaryKeyField()
+    R1 = peewee.ForeignKeyField(Names)
+    R2 = peewee.ForeingKeyField(Names)
+
+class Objects(MySQLModel):
+    idObjects = peewee.PrimaryKeyField()
+    ObjectName = peewee.ForeignKeyField(Names)
+    ObjectAddress = peewee.ForeignKeyField(Addresses)
+    ObjectPhone = peewee.ForeignKeyField(Phone)
+    ObjectCrime = peewee.ForeignKeyField(Crimes)
+    ObjectMedia = peewee.ForeignKeyField(Media)
+    ObjectWebsites = peewee.ForeingKeyField(Websites)
