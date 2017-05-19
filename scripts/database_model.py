@@ -71,12 +71,12 @@ class Groups(MySQLModel):
 class GroupMem(MySQLModel):
     idGroupMem = peewee.PrimaryKeyField()
     GroupMember = peewee.ForeignKeyField(Names)
-    GroupName = peewee.ForeignKeyField(Names, related+name=)
+    GroupName = peewee.ForeignKeyField(Names, related_name='group_name')
 
 class Friends(MySQLModel):
     idFriends = peewee.PrimaryKeyField()
     R1 = peewee.ForeignKeyField(Names)
-    R2 = peewee.ForeingKeyField(Names)
+    R2 = peewee.ForeignKeyField(Names, related_name='R2')
 
 class Objects(MySQLModel):
     idObjects = peewee.PrimaryKeyField()
@@ -85,4 +85,4 @@ class Objects(MySQLModel):
     ObjectPhone = peewee.ForeignKeyField(Phone)
     ObjectCrime = peewee.ForeignKeyField(Crimes)
     ObjectMedia = peewee.ForeignKeyField(Media)
-    ObjectWebsites = peewee.ForeingKeyField(Websites)
+    ObjectWebsites = peewee.ForeignKeyField(Websites)
