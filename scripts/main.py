@@ -1,6 +1,6 @@
 #! /usr/bin/python3
 from os import path
-import sys
+from sys import modules
 import loggerSetup
 def log(level,e):
     script = __file__
@@ -18,10 +18,15 @@ def install():
     return
 
 def checkModule(module):
-    if module not in sys.modules:
+    if module not in modules:
         return False
     else:
         return True
+
+def CLI():
+    #run Command Line Tools
+    #ncurses?
+    print("Command line tools")
 
 def main():
     installed = checkInstalled()
@@ -30,6 +35,7 @@ def main():
     print("GUI:",GUI)
     if installed is False:
         install()
+        raise SystemExit
     elif installed is True:
         if GUI is False:
             CLI()
@@ -37,6 +43,3 @@ def main():
             runGUI()
 
 main()
-#loggerSetup.main(1,'a','error')
-#log('d','error')
-#print(__file__)
