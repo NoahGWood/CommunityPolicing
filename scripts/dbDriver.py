@@ -3,10 +3,6 @@
 
 Usage: dbDriver.py <cmd> <target> <args>
 
-Commands:
-add  Add
-del  delete
-
 Arguments:
 cmd  Commands(e.g. add, rm)
 target  Database targets
@@ -15,8 +11,8 @@ args  See options
 
 Options:
 add  Add
--h --help
-
+-h --help  Display this help page
+-v --version  Display version information
 Examples:
 person fname,lname,mname,ethn
 loc country,state,city,address,zipcode
@@ -40,10 +36,7 @@ logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %
 try:
     graph = Graph(host="localhost", user="neo4j", password="password")
 except Exception as e:
-    print("Something went wrong loading graph")
-    print("Error conneting to graph")
-    print(e)
-
+    logger.debug(str(e))
 
 def createPerson(fname,lname,mname,ethn):
     person = Node("Person",fname=fname,lname=lname,mname=mname,ethn=ethn)
@@ -95,8 +88,7 @@ def delEntity(*a):
     #do something?
 if __name__ == '__main__':
     try:
-        logger.debug('test')
-        arguments = docopt.docopt(__doc__)
+        arguments = docopt.docopt(__doc__, version='dbDriver: 0.0.1')
         logger.debug('docupt succeed')
         logger.debug(arguments)
         args = ''.join(arguments['<args>'])
