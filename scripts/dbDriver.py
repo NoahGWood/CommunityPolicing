@@ -60,19 +60,19 @@ def createLoc(country,state,city,address,zipcode):
     graph.create(loc)
 
 def createCrime(descr,date):
-    crime = Node(Crime,descr=descr,date=date)
+    crime = Node("Crime",Crime,descr=descr,date=date)
     graph.create(crime)
 
 def createGroup(name,gtype):
-    group = Node(name=name,gtype=gtype)
+    group = Node("Group"name=name,gtype=gtype)
     graph.create(group)
 
 def createMedia(name,MIME,loc,hashd):
-    media = Node(name=name,MIME=MIME,loc=loc,hashd=hashd)
+    media = Node("Media",name=name,MIME=MIME,loc=loc,hashd=hashd)
     graph.create(meda)
 
 def createWebsite(name,url):
-    web = Node(name=name,url=url)
+    web = Node("Website",name=name,url=url)
     graph.create(web)
 
 def createFBUser(uname,url,uid):

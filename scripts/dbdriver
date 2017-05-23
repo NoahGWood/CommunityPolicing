@@ -10,18 +10,46 @@ This program handles all database queries for the OSINT program. It is included 
 If you'd like to use it anyway below is a list of commands and functions.
 
 .SH COMMANDS
-The following commands are currently functional
 .RE
-add  -adds node and label to database:
+The following commands are currently functional:
+.RE 
+=======================================================================
+.RE
+.B add 
+-adds node and label to database:                                     
+.RE
+=======================================================================
 .RE
 .B USAGE:
 .RE
-    ./dbDriver.py add table labels
+            ./dbDriver.py add table labels
 .RE
 .B Example:
 .RE
-   ./dbDriver.py add person john,wayne,gayce,white
-
+            ./dbDriver.py add person john,wayne,gayce,white
+.RE
+.B Info:
+.RE
+            person fname,lname,mname,ethn
+.RE
+            loc country,state,city,address,zipcode --location
+.RE
+            crime description,date
+.RE
+            group name,gtype
+.RE
+            media name,MIME,loc,hashd
+.RE
+            website name,url
+.RE
+            fbu uname,url,uid           --facebook user
+.RE
+            fbp post,url                --facebook post
+.RE
+            fbe name,url,descr,date     --facebook event
+.RE
+            fbg name,url,descr          --facebook group
+=======================================================================
 .SH BUGS
 This program is still in development; as such there will almost certainly be bugs.
 .RE
