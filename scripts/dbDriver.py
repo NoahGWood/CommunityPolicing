@@ -1,7 +1,16 @@
 #!/usr/bin/python3
 """DistribCollabOSINT-dbManager
 
-Usage: dbDriver.py <cmd> <target> <args>
+Usage:
+dbDriver.py <cmd> <target> [<args>]
+/===========================================================\
+
+|# Basic Commands:                                         #|
+|#    add  Add to database                                 #|
+|#    find  Execute search query                           #|
+|#    delete <node>  Delete node                           #|
+|#    delete all  DELETES ENTIRE DATABASE                  #|
+\===========================================================/
 
 Arguments:
 cmd  Commands(e.g. add, rm)
@@ -10,9 +19,10 @@ args  See options
 
 
 Options:
-add  Add
 -h --help  Display this help page
 -v --version  Display version information
+--limit 
+
 Examples:
 person fname,lname,mname,ethn
 loc country,state,city,address,zipcode
@@ -24,6 +34,8 @@ fbu uname,url,uid
 fbp post,url
 fbe name,url,descr,date
 fbg name,url,descr
+
+For more, RTFM: man ./dbdriver
 """
 import docopt
 from py2neo import Graph, Node
@@ -85,6 +97,13 @@ def delDB():
 def delEntity(*a):
     graph.delete(*a)
 
+#def addRel(*a):
+
+def findRel(start_node,rel_type):
+    # def match(self, start_node=None, rel_type=None, end_node=None, bidirectional=False, limit=None):
+    for rel in graph.match(start_node=alice, rel_type="FRIEND"):
+        return(rel.end_node.properties["name"])
+    
     #do something?
 if __name__ == '__main__':
     try:
