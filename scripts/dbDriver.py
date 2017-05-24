@@ -2,7 +2,11 @@
 """DistribCollabOSINT-dbManager
 
 Usage:
-dbDriver.py <cmd> <target> [<args>]
+dbDriver.py add <table> <data>
+dbDriver.py delete [<node>|--all]
+dbDriver.py relation <node1,relationship,node2>
+dbDriver.py find-relation <node,relationship>
+
 /===========================================================\
 
 |# Basic Commands:                                         #|
@@ -34,11 +38,12 @@ fbu uname,url,uid
 fbp post,url
 fbe name,url,descr,date
 fbg name,url,descr
+rel node1,type,node2,properties
 
 For more, RTFM: man ./dbdriver
 """
 import docopt
-from py2neo import Graph, Node
+from py2neo import Graph, Node, Relationship, remote
 import logging
 logger = logging.getLogger()
 import logging
@@ -50,10 +55,16 @@ try:
 except Exception as e:
     logger.debug(str(e))
 
+def index(_id):
+#    index = graph.create_index("Node", "id")
+    tx = g.begin()
+    index = graph.create_index('Node',_id)
+    tx.create(index)
+    tx.commit
+
 def createPerson(fname,lname,mname,ethn):
     person = Node("Person",fname=fname,lname=lname,mname=mname,ethn=ethn)
     graph.create(person)
-
 
 def createLoc(country,state,city,address,zipcode):
     loc = Node("Location",country=country,state=state,city=city,address=address,zipcode=zipcode)
@@ -97,45 +108,78 @@ def delDB():
 def delEntity(*a):
     graph.delete(*a)
 
-#def addRel(*a):
+def addRel(start_node,rel_type,end_node):
+    tx = graph.begin()
+    try:
+        start_node = graph.node(int(start_node))
+        end_node = graph.node(int(end_node))
+        logger.debug(start_node)
+        logger.debug(end_node)
+        rel = Relationship(start_node, str(rel_type), end_node)
+        tx.create(rel)
+        tx.commit()
+        logger.debug('Returned: ' + str(rel))
+    except Exception as e:
+        logger.debug(e)
 
 def findRel(start_node,rel_type):
-    # def match(self, start_node=None, rel_type=None, end_node=None, bidirectional=False, limit=None):
-    for rel in graph.match(start_node=alice, rel_type="FRIEND"):
-        return(rel.end_node.properties["name"])
+    logger.debug('start===============================')
+    for rel in graph.match(start_node=graph.node(int(start_node)), rel_type=rel_type):
+        logger.debug(rel.end_node()["name"])
+
+def delRel(key):
+    #see if we can find the key
+    rel = Relationship
+#    graph.re
+
+#def match(self, start_node=None, rel_type=None, end_node=None, bidirectional=False, limit=None):
+ #   for rel in graph.match(start_node=alice, rel_type="FRIEND"):
+  #      return(rel.end_node.properties["name"])
     
     #do something?
 if __name__ == '__main__':
     try:
         arguments = docopt.docopt(__doc__, version='dbDriver: 0.0.1')
-        logger.debug('docupt succeed')
         logger.debug(arguments)
-        args = ''.join(arguments['<args>'])
-        args = args.split(',')
-        cmd = ''.join(arguments['<cmd>'])
-        target = ''.join(arguments['<target>'])
-        logger.debug(str(args),str(cmd),str(target))
-        if cmd in 'add':
-            if target in 'person':
+        #print(arguments)
+        if arguments['add'] == True:
+            args = ''.join(arguments['<data>'])
+            args = args.split(',')
+            if arguments['<table>'] in 'person':
                 createPerson(*args)
-            elif target in 'loc':
+            elif arguments['<table>'] in 'loc':
                 createLoc(*args)
-            elif target in 'crime':
+            elif arguments['<table>'] in 'crime':
                 createCrime(*args)
-            elif target in 'group':
+            elif arguments['<table>'] in 'group':
                 createGroup(*args)
-            elif target in 'media':
+            elif arguments['<table>'] in 'media':
                 createMedia(*args)
-            elif target in 'website':
+            elif arguments['<table>'] in 'website':
                 createWebsite(*args)
-            elif target in 'fbu':
+            elif arguments['<table>'] in 'fbu':
                 createFBUser(*args)
-            elif target in 'fbp':
+            elif arguments['<table>'] in 'fbp':
                 createFBPost(*args)
-            elif target in 'fbe':
+            elif arguments['<table>'] in 'fbe':
                 createFBEvent(*args)
-            elif target in 'fbg':
+            elif arguments['<table>'] in 'fbg':
                 createFBGroup(*args)
+        elif arguments['delete'] == True:
+            logger.debug(str(arguments))
+            if arguments['--all']==True:
+                delDB()
+        elif arguments['relation']==True:
+            logger.debug(arguments['<node1,relationship,node2>'])
+            args = ''.join(str(arguments['<node1,relationship,node2>']))
+            args = args.split(',')
+            addRel(*args)
+        elif arguments['find-relation'] == True:
+            args = ''.join(str(arguments['<node,relationship>']))
+            args = args.split(',')
+            findRel(*args)
+            
+
     except docopt.DocoptExit as e:
-        print(e)
+        logger.debug(e)
 
