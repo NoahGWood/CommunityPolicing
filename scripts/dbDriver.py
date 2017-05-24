@@ -64,7 +64,7 @@ def createCrime(descr,date):
     graph.create(crime)
 
 def createGroup(name,gtype):
-    group = Node("Group"name=name,gtype=gtype)
+    group = Node("Group",name=name,gtype=gtype)
     graph.create(group)
 
 def createMedia(name,MIME,loc,hashd):
