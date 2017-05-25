@@ -55,12 +55,19 @@ try:
 except Exception as e:
     logger.debug(str(e))
 
-def index(_id):
+#To be implemented: Indexes will greatly increase querying speed (at the expense of writing and storage)
+#Should be an opt-in function to allow users with less storage space to work.
+#def index(_id):
 #    index = graph.create_index("Node", "id")
-    tx = g.begin()
-    index = graph.create_index('Node',_id)
-    tx.create(index)
-    tx.commit
+#    tx = g.begin()
+#    index = graph.create_index('Node',_id)
+#    tx.create(index)
+#    tx.commit
+
+#These create functions will work for now, however down the line and preferrably before beta testing
+#it should be implemented the ability to add custom structured data which will enable the program to be even more
+#community supported (won't need to send pull requests to the main repo)
+#Example: dbDriver.py add NewTable value1=value,value2=value; etc.
 
 def createPerson(fname,lname,mname,ethn):
     person = Node("Person",fname=fname,lname=lname,mname=mname,ethn=ethn)
@@ -109,6 +116,7 @@ def delEntity(*a):
     graph.delete(*a)
 
 def addRel(start_node,rel_type,end_node):
+#poor documentation of Relationship
     tx = graph.begin()
     try:
         start_node = graph.node(int(start_node))

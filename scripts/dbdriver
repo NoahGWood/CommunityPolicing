@@ -3,11 +3,11 @@
 OSINT-dbDriver | Handles database queries and functions for the OSINT program
 
 .SH SYNOPSIS
-.B ./dbDriver.py [cmd] [targets] [arguments]
+.B ./dbDriver.py [cmd] [options]
 
 .SH DESCRIPTION
-This program handles all database queries for the OSINT program. It is included in a command line program for advanced users only, those without experience with neo4j and python, and without reading the other database documentation should not use this program.
-If you'd like to use it anyway below is a list of commands and functions.
+This program handles all database queries for the OSINT program. It is included with a command line interface for advanced users only, those without experience with neo4j and python, and without reading the other database documentation should not use this program.
+If you'd like to use it anyway below is a list of commands and functions. This program is licensed under the Apache license and may be used 
 
 .SH COMMANDS
 .RE
@@ -22,7 +22,7 @@ The following commands are currently functional:
 .RE
 .B USAGE:
 .RE
-            ./dbDriver.py add table labels
+            ./dbDriver.py add <table> <labels>
 .RE
 .B Example:
 .RE
@@ -49,7 +49,52 @@ The following commands are currently functional:
             fbe name,url,descr,date     --facebook event
 .RE
             fbg name,url,descr          --facebook group
+.RE
 =======================================================================
+.RE
+.B delete
+-deletes an entity from the database:
+.RE
+.B USAGE:
+.RE
+            ./dbDriver.py delete [<node> | --all | --relationship <key>]
+.RE
+.B Example(s):
+.RE
+            ./dbDriver.py delete 132                     #Deletes node[132]
+.RE 
+            ./dbDriver.py delete --all                   #Deletes entire database
+.RE
+            ./dbDriver.py delete --relationship 1        #Deletes relationship[1]
+.RE
+=======================================================================
+.RE
+.B relation
+-creates a new relation in the database
+.RE
+.B USAGE:
+.RE
+            ./dbDriver.py relation <node1,relationship,node2>
+.RE
+.B Example:
+.RE
+            ./dbDriver.py relation 1,is_before,2
+.RE
+=======================================================================
+.RE
+.B find-relation
+-queries database to find relation
+.RE
+.B USAGE:
+.RE
+            ./dbDriver.py find-relation <node,relationship>
+.RE
+.B Example:
+.RE
+            ./dbDriver.py find-relation 13,is_before     #Returns 14
+.RE
+=======================================================================
+.RE
 .SH BUGS
 This program is still in development; as such there will almost certainly be bugs.
 .RE
