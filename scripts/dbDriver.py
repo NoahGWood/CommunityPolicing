@@ -3,7 +3,7 @@
 
 Usage:
 dbDriver.py add <table> <data>
-dbDriver.py delete [<node>|--all]
+dbDriver.py delete [<node>|--all|--relationship <key>]
 dbDriver.py relation <node1,relationship,node2>
 dbDriver.py find-relation <node,relationship>
 
@@ -128,8 +128,15 @@ def findRel(start_node,rel_type):
         logger.debug(rel.end_node()["name"])
 
 def delRel(key):
+    tx = graph.begin()
     #see if we can find the key
-    rel = Relationship
+    rel = graph.relationship(int(key))
+    try:
+        logger.debug('=================================================')
+        tx.separate(rel)
+        tx.commit()
+    except Exception as e:
+        logger.debug(e)
 #    graph.re
 
 #def match(self, start_node=None, rel_type=None, end_node=None, bidirectional=False, limit=None):
@@ -169,6 +176,8 @@ if __name__ == '__main__':
             logger.debug(str(arguments))
             if arguments['--all']==True:
                 delDB()
+            elif arguments['--relationship']==True:
+                delRel(str(arguments['<key>']))
         elif arguments['relation']==True:
             logger.debug(arguments['<node1,relationship,node2>'])
             args = ''.join(str(arguments['<node1,relationship,node2>']))
