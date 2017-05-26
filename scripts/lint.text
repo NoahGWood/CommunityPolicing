@@ -1,0 +1,260 @@
+************* Module CommunityPolicing.scripts.dbDriver
+W: 59, 0: TODO(OP): Create an index function (fixme)
+C: 29, 0: Trailing whitespace (trailing-whitespace)
+C: 60, 0: Line too long (101/100) (line-too-long)
+C: 63, 0: Line too long (101/100) (line-too-long)
+C: 64, 0: Line too long (115/100) (line-too-long)
+C: 72, 0: Unnecessary parens after 'return' keyword (superfluous-parens)
+C: 76, 0: Unnecessary parens after 'return' keyword (superfluous-parens)
+C: 81, 0: Line too long (105/100) (line-too-long)
+C: 83, 0: Unnecessary parens after 'return' keyword (superfluous-parens)
+C: 87, 0: Unnecessary parens after 'return' keyword (superfluous-parens)
+C: 94, 0: Unnecessary parens after 'return' keyword (superfluous-parens)
+C: 98, 0: Unnecessary parens after 'return' keyword (superfluous-parens)
+C:104, 0: Unnecessary parens after 'return' keyword (superfluous-parens)
+C:108, 0: Unnecessary parens after 'return' keyword (superfluous-parens)
+C:114, 0: Unnecessary parens after 'return' keyword (superfluous-parens)
+C:118, 0: Unnecessary parens after 'return' keyword (superfluous-parens)
+C:124, 0: Unnecessary parens after 'return' keyword (superfluous-parens)
+C:128, 0: Unnecessary parens after 'return' keyword (superfluous-parens)
+C:134, 0: Unnecessary parens after 'return' keyword (superfluous-parens)
+C:138, 0: Unnecessary parens after 'return' keyword (superfluous-parens)
+C:144, 0: Unnecessary parens after 'return' keyword (superfluous-parens)
+C:148, 0: Unnecessary parens after 'return' keyword (superfluous-parens)
+C:154, 0: Unnecessary parens after 'return' keyword (superfluous-parens)
+C:158, 0: Unnecessary parens after 'return' keyword (superfluous-parens)
+C:164, 0: Unnecessary parens after 'return' keyword (superfluous-parens)
+C:168, 0: Unnecessary parens after 'return' keyword (superfluous-parens)
+C:173, 0: Unnecessary parens after 'return' keyword (superfluous-parens)
+C:177, 0: Unnecessary parens after 'return' keyword (superfluous-parens)
+C:182, 0: Unnecessary parens after 'return' keyword (superfluous-parens)
+C:186, 0: Unnecessary parens after 'return' keyword (superfluous-parens)
+C:199, 0: Unnecessary parens after 'return' keyword (superfluous-parens)
+C:203, 0: Unnecessary parens after 'return' keyword (superfluous-parens)
+C:209, 0: Trailing whitespace (trailing-whitespace)
+C:211, 0: Exactly one space required after comma
+        return(True,returns)
+                   ^ (bad-whitespace)
+C:215, 0: Unnecessary parens after 'return' keyword (superfluous-parens)
+C:223, 0: Unnecessary parens after 'return' keyword (superfluous-parens)
+C:227, 0: Unnecessary parens after 'return' keyword (superfluous-parens)
+C:232, 0: Exactly one space required after comma
+        return(True,returns)
+                   ^ (bad-whitespace)
+C:236, 0: Unnecessary parens after 'return' keyword (superfluous-parens)
+C:241, 0: Exactly one space required after comma
+        return(True,returns)
+                   ^ (bad-whitespace)
+C:246, 0: Unnecessary parens after 'return' keyword (superfluous-parens)
+C:278, 0: Exactly one space required around comparison
+            if arguments['--all']==True:
+                                 ^^ (bad-whitespace)
+C:280, 0: Exactly one space required around comparison
+            elif arguments['--relationship']==True:
+                                            ^^ (bad-whitespace)
+C:282, 0: Exactly one space required around comparison
+        elif arguments['relation']==True:
+                                  ^^ (bad-whitespace)
+W:  2, 0: Anomalous backslash in string: '\='. String constant might be missing an r prefix. (anomalous-backslash-in-string)
+C:  1, 0: Invalid module name "dbDriver" (invalid-name)
+C: 51, 0: Invalid constant name "logger" (invalid-name)
+W: 56, 7: Catching too general exception Exception (broad-except)
+C: 55, 4: Invalid constant name "graph" (invalid-name)
+C: 56,20: Invalid variable name "e" (invalid-name)
+C: 68, 0: Missing function docstring (missing-docstring)
+W: 73,11: Catching too general exception Exception (broad-except)
+C: 73,24: Invalid variable name "e" (invalid-name)
+C: 79, 0: Missing function docstring (missing-docstring)
+W: 84,11: Catching too general exception Exception (broad-except)
+C: 84,24: Invalid variable name "e" (invalid-name)
+C: 90, 0: Missing function docstring (missing-docstring)
+W: 95,11: Catching too general exception Exception (broad-except)
+C: 95,24: Invalid variable name "e" (invalid-name)
+C:100, 0: Missing function docstring (missing-docstring)
+W:105,11: Catching too general exception Exception (broad-except)
+C:105,24: Invalid variable name "e" (invalid-name)
+C:110, 0: Invalid argument name "MIME" (invalid-name)
+C:110, 0: Missing function docstring (missing-docstring)
+W:115,11: Catching too general exception Exception (broad-except)
+C:115,24: Invalid variable name "e" (invalid-name)
+W:112, 8: Unused variable 'media' (unused-variable)
+C:120, 0: Missing function docstring (missing-docstring)
+W:125,11: Catching too general exception Exception (broad-except)
+C:125,24: Invalid variable name "e" (invalid-name)
+C:130, 0: Missing function docstring (missing-docstring)
+W:135,11: Catching too general exception Exception (broad-except)
+C:135,24: Invalid variable name "e" (invalid-name)
+C:140, 0: Missing function docstring (missing-docstring)
+W:145,11: Catching too general exception Exception (broad-except)
+C:145,24: Invalid variable name "e" (invalid-name)
+C:150, 0: Missing function docstring (missing-docstring)
+W:155,11: Catching too general exception Exception (broad-except)
+C:155,24: Invalid variable name "e" (invalid-name)
+C:160, 0: Missing function docstring (missing-docstring)
+W:165,11: Catching too general exception Exception (broad-except)
+C:165,24: Invalid variable name "e" (invalid-name)
+W:160,30: Unused argument 'descr' (unused-argument)
+C:170, 0: Missing function docstring (missing-docstring)
+W:174,11: Catching too general exception Exception (broad-except)
+C:174,24: Invalid variable name "e" (invalid-name)
+C:179, 0: Missing function docstring (missing-docstring)
+W:183,11: Catching too general exception Exception (broad-except)
+E:181, 8: No value for argument 'subgraph' in method call (no-value-for-parameter)
+C:183,24: Invalid variable name "e" (invalid-name)
+C:188, 0: Missing function docstring (missing-docstring)
+C:189, 4: Invalid variable name "tx" (invalid-name)
+W:200,11: Catching too general exception Exception (broad-except)
+C:200,24: Invalid variable name "e" (invalid-name)
+C:205, 0: Missing function docstring (missing-docstring)
+W:212,11: Catching too general exception Exception (broad-except)
+C:212,24: Invalid variable name "e" (invalid-name)
+C:217, 0: Missing function docstring (missing-docstring)
+W:224,11: Catching too general exception Exception (broad-except)
+C:219, 8: Invalid variable name "tx" (invalid-name)
+C:224,24: Invalid variable name "e" (invalid-name)
+C:229, 0: Missing function docstring (missing-docstring)
+W:233,11: Catching too general exception Exception (broad-except)
+C:233,24: Invalid variable name "e" (invalid-name)
+W:238,10: Redefining name 'args' from outer scope (line 254) (redefined-outer-name)
+C:238, 0: Missing function docstring (missing-docstring)
+W:242,11: Catching too general exception Exception (broad-except)
+C:242,24: Invalid variable name "e" (invalid-name)
+C:250, 8: Invalid constant name "arguments" (invalid-name)
+C:253,11: Comparison to True should be just 'expr' or 'expr is True' (singleton-comparison)
+C:254,12: Invalid constant name "args" (invalid-name)
+C:255,12: Invalid constant name "args" (invalid-name)
+C:276,13: Comparison to True should be just 'expr' or 'expr is True' (singleton-comparison)
+C:278,15: Comparison to True should be just 'expr' or 'expr is True' (singleton-comparison)
+C:280,17: Comparison to True should be just 'expr' or 'expr is True' (singleton-comparison)
+C:282,13: Comparison to True should be just 'expr' or 'expr is True' (singleton-comparison)
+C:284,12: Invalid constant name "args" (invalid-name)
+C:285,12: Invalid constant name "args" (invalid-name)
+C:287,13: Comparison to True should be just 'expr' or 'expr is True' (singleton-comparison)
+C:288,12: Invalid constant name "args" (invalid-name)
+C:289,12: Invalid constant name "args" (invalid-name)
+C:291,13: Comparison to True should be just 'expr' or 'expr is True' (singleton-comparison)
+C:292,12: Invalid constant name "args" (invalid-name)
+C:295,32: Invalid variable name "e" (invalid-name)
+W: 49, 0: Unused remote imported from py2neo (unused-import)
+
+
+Report
+======
+217 statements analysed.
+
+Statistics by type
+------------------
+
++---------+-------+-----------+-----------+------------+---------+
+|type     |number |old number |difference |%documented |%badname |
++=========+=======+===========+===========+============+=========+
+|module   |1      |1          |=          |100.00      |100.00   |
++---------+-------+-----------+-----------+------------+---------+
+|class    |0      |0          |=          |0           |0        |
++---------+-------+-----------+-----------+------------+---------+
+|method   |0      |0          |=          |0           |0        |
++---------+-------+-----------+-----------+------------+---------+
+|function |17     |17         |=          |0.00        |0.00     |
++---------+-------+-----------+-----------+------------+---------+
+
+
+
+External dependencies
+---------------------
+::
+
+    docopt (CommunityPolicing.scripts.dbDriver)
+    py2neo (CommunityPolicing.scripts.dbDriver)
+
+
+
+Raw metrics
+-----------
+
++----------+-------+------+---------+-----------+
+|type      |number |%     |previous |difference |
++==========+=======+======+=========+===========+
+|code      |218    |73.15 |218      |=          |
++----------+-------+------+---------+-----------+
+|docstring |44     |14.77 |44       |=          |
++----------+-------+------+---------+-----------+
+|comment   |10     |3.36  |10       |=          |
++----------+-------+------+---------+-----------+
+|empty     |26     |8.72  |26       |=          |
++----------+-------+------+---------+-----------+
+
+
+
+Duplication
+-----------
+
++-------------------------+------+---------+-----------+
+|                         |now   |previous |difference |
++=========================+======+=========+===========+
+|nb duplicated lines      |0     |0        |=          |
++-------------------------+------+---------+-----------+
+|percent duplicated lines |0.000 |0.000    |=          |
++-------------------------+------+---------+-----------+
+
+
+
+Messages by category
+--------------------
+
++-----------+-------+---------+-----------+
+|type       |number |previous |difference |
++===========+=======+=========+===========+
+|convention |100    |100      |=          |
++-----------+-------+---------+-----------+
+|refactor   |0      |0        |=          |
++-----------+-------+---------+-----------+
+|warning    |24     |24       |=          |
++-----------+-------+---------+-----------+
+|error      |1      |1        |=          |
++-----------+-------+---------+-----------+
+
+
+
+Messages
+--------
+
++------------------------------+------------+
+|message id                    |occurrences |
++==============================+============+
+|invalid-name                  |33          |
++------------------------------+------------+
+|superfluous-parens            |31          |
++------------------------------+------------+
+|broad-except                  |18          |
++------------------------------+------------+
+|missing-docstring             |17          |
++------------------------------+------------+
+|singleton-comparison          |7           |
++------------------------------+------------+
+|bad-whitespace                |6           |
++------------------------------+------------+
+|line-too-long                 |4           |
++------------------------------+------------+
+|trailing-whitespace           |2           |
++------------------------------+------------+
+|unused-variable               |1           |
++------------------------------+------------+
+|unused-import                 |1           |
++------------------------------+------------+
+|unused-argument               |1           |
++------------------------------+------------+
+|redefined-outer-name          |1           |
++------------------------------+------------+
+|no-value-for-parameter        |1           |
++------------------------------+------------+
+|fixme                         |1           |
++------------------------------+------------+
+|anomalous-backslash-in-string |1           |
++------------------------------+------------+
+
+
+
+Global evaluation
+-----------------
+Your code has been rated at 4.06/10 (previous run: 4.06/10, +0.00)
+
