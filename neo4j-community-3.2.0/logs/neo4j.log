@@ -1,0 +1,114 @@
+nohup: ignoring input
+2017-05-30 02:11:03.314+0000 INFO  ======== Neo4j 3.2.0 ========
+nohup: ignoring input
+2017-05-30 02:11:04.763+0000 INFO  Starting...
+2017-05-30 02:11:08.634+0000 INFO  ======== Neo4j 3.2.0 ========
+2017-05-30 02:11:10.139+0000 INFO  Bolt enabled on 127.0.0.1:7687.
+2017-05-30 02:11:10.767+0000 INFO  Starting...
+2017-05-30 02:11:15.515+0000 INFO  Bolt enabled on 127.0.0.1:7687.
+2017-05-30 02:11:16.339+0000 ERROR Failed to start Neo4j: Starting Neo4j failed: Component 'org.neo4j.server.database.LifecycleManagingDatabase@76515e7b' was successfully initialized, but failed to start. Please see attached cause exception. Starting Neo4j failed: Component 'org.neo4j.server.database.LifecycleManagingDatabase@76515e7b' was successfully initialized, but failed to start. Please see attached cause exception.
+org.neo4j.server.ServerStartupException: Starting Neo4j failed: Component 'org.neo4j.server.database.LifecycleManagingDatabase@76515e7b' was successfully initialized, but failed to start. Please see attached cause exception.
+	at org.neo4j.server.exception.ServerStartupErrors.translateToServerStartupError(ServerStartupErrors.java:68)
+	at org.neo4j.server.AbstractNeoServer.start(AbstractNeoServer.java:219)
+	at org.neo4j.server.ServerBootstrapper.start(ServerBootstrapper.java:107)
+	at org.neo4j.server.ServerBootstrapper.start(ServerBootstrapper.java:80)
+	at org.neo4j.server.CommunityEntryPoint.main(CommunityEntryPoint.java:28)
+Caused by: org.neo4j.kernel.lifecycle.LifecycleException: Component 'org.neo4j.server.database.LifecycleManagingDatabase@76515e7b' was successfully initialized, but failed to start. Please see attached cause exception.
+	at org.neo4j.kernel.lifecycle.LifeSupport$LifecycleInstance.start(LifeSupport.java:444)
+	at org.neo4j.kernel.lifecycle.LifeSupport.start(LifeSupport.java:107)
+	at org.neo4j.server.AbstractNeoServer.start(AbstractNeoServer.java:211)
+	... 3 more
+Caused by: java.lang.RuntimeException: Error starting org.neo4j.kernel.impl.factory.GraphDatabaseFacadeFactory, /home/noah/Desktop/Projects/CommunityPolicing/neo4j-community-3.2.0/data/databases/graph.db
+	at org.neo4j.kernel.impl.factory.GraphDatabaseFacadeFactory.initFacade(GraphDatabaseFacadeFactory.java:209)
+	at org.neo4j.kernel.impl.factory.GraphDatabaseFacadeFactory.newFacade(GraphDatabaseFacadeFactory.java:124)
+	at org.neo4j.server.CommunityNeoServer.lambda$static$0(CommunityNeoServer.java:58)
+	at org.neo4j.server.database.LifecycleManagingDatabase.start(LifecycleManagingDatabase.java:89)
+	at org.neo4j.kernel.lifecycle.LifeSupport$LifecycleInstance.start(LifeSupport.java:434)
+	... 5 more
+Caused by: org.neo4j.kernel.lifecycle.LifecycleException: Component 'org.neo4j.kernel.internal.StoreLockerLifecycleAdapter@4f67b166' was successfully initialized, but failed to start. Please see attached cause exception.
+	at org.neo4j.kernel.lifecycle.LifeSupport$LifecycleInstance.start(LifeSupport.java:444)
+	at org.neo4j.kernel.lifecycle.LifeSupport.start(LifeSupport.java:107)
+	at org.neo4j.kernel.impl.factory.GraphDatabaseFacadeFactory.initFacade(GraphDatabaseFacadeFactory.java:205)
+	... 9 more
+Caused by: org.neo4j.kernel.StoreLockException: Store and its lock file has been locked by another process: /home/noah/Desktop/Projects/CommunityPolicing/neo4j-community-3.2.0/data/databases/graph.db/store_lock. Please ensure no other process is using this database, and that the directory is writable (required even for read-only access)
+	at org.neo4j.kernel.internal.StoreLocker.storeLockException(StoreLocker.java:94)
+	at org.neo4j.kernel.internal.StoreLocker.checkLock(StoreLocker.java:80)
+	at org.neo4j.kernel.internal.StoreLockerLifecycleAdapter.start(StoreLockerLifecycleAdapter.java:40)
+	at org.neo4j.kernel.lifecycle.LifeSupport$LifecycleInstance.start(LifeSupport.java:434)
+	... 11 more
+2017-05-30 02:11:16.373+0000 INFO  Neo4j Server shutdown initiated by request
+nohup: ignoring input
+2017-05-30 02:11:24.279+0000 INFO  ======== Neo4j 3.2.0 ========
+2017-05-30 02:11:25.649+0000 INFO  Starting...
+2017-05-30 02:11:28.625+0000 INFO  Started.
+2017-05-30 02:11:29.748+0000 INFO  Bolt enabled on 127.0.0.1:7687.
+2017-05-30 02:11:30.340+0000 ERROR Failed to start Neo4j: Starting Neo4j failed: Component 'org.neo4j.server.database.LifecycleManagingDatabase@76515e7b' was successfully initialized, but failed to start. Please see attached cause exception. Starting Neo4j failed: Component 'org.neo4j.server.database.LifecycleManagingDatabase@76515e7b' was successfully initialized, but failed to start. Please see attached cause exception.
+org.neo4j.server.ServerStartupException: Starting Neo4j failed: Component 'org.neo4j.server.database.LifecycleManagingDatabase@76515e7b' was successfully initialized, but failed to start. Please see attached cause exception.
+	at org.neo4j.server.exception.ServerStartupErrors.translateToServerStartupError(ServerStartupErrors.java:68)
+	at org.neo4j.server.AbstractNeoServer.start(AbstractNeoServer.java:219)
+	at org.neo4j.server.ServerBootstrapper.start(ServerBootstrapper.java:107)
+	at org.neo4j.server.ServerBootstrapper.start(ServerBootstrapper.java:80)
+	at org.neo4j.server.CommunityEntryPoint.main(CommunityEntryPoint.java:28)
+Caused by: org.neo4j.kernel.lifecycle.LifecycleException: Component 'org.neo4j.server.database.LifecycleManagingDatabase@76515e7b' was successfully initialized, but failed to start. Please see attached cause exception.
+	at org.neo4j.kernel.lifecycle.LifeSupport$LifecycleInstance.start(LifeSupport.java:444)
+	at org.neo4j.kernel.lifecycle.LifeSupport.start(LifeSupport.java:107)
+	at org.neo4j.server.AbstractNeoServer.start(AbstractNeoServer.java:211)
+	... 3 more
+Caused by: java.lang.RuntimeException: Error starting org.neo4j.kernel.impl.factory.GraphDatabaseFacadeFactory, /home/noah/Desktop/Projects/CommunityPolicing/neo4j-community-3.2.0/data/databases/graph.db
+	at org.neo4j.kernel.impl.factory.GraphDatabaseFacadeFactory.initFacade(GraphDatabaseFacadeFactory.java:209)
+	at org.neo4j.kernel.impl.factory.GraphDatabaseFacadeFactory.newFacade(GraphDatabaseFacadeFactory.java:124)
+	at org.neo4j.server.CommunityNeoServer.lambda$static$0(CommunityNeoServer.java:58)
+	at org.neo4j.server.database.LifecycleManagingDatabase.start(LifecycleManagingDatabase.java:89)
+	at org.neo4j.kernel.lifecycle.LifeSupport$LifecycleInstance.start(LifeSupport.java:434)
+	... 5 more
+Caused by: org.neo4j.kernel.lifecycle.LifecycleException: Component 'org.neo4j.kernel.internal.StoreLockerLifecycleAdapter@4f67b166' was successfully initialized, but failed to start. Please see attached cause exception.
+	at org.neo4j.kernel.lifecycle.LifeSupport$LifecycleInstance.start(LifeSupport.java:444)
+	at org.neo4j.kernel.lifecycle.LifeSupport.start(LifeSupport.java:107)
+	at org.neo4j.kernel.impl.factory.GraphDatabaseFacadeFactory.initFacade(GraphDatabaseFacadeFactory.java:205)
+	... 9 more
+Caused by: org.neo4j.kernel.StoreLockException: Store and its lock file has been locked by another process: /home/noah/Desktop/Projects/CommunityPolicing/neo4j-community-3.2.0/data/databases/graph.db/store_lock. Please ensure no other process is using this database, and that the directory is writable (required even for read-only access)
+	at org.neo4j.kernel.internal.StoreLocker.storeLockException(StoreLocker.java:94)
+	at org.neo4j.kernel.internal.StoreLocker.checkLock(StoreLocker.java:80)
+	at org.neo4j.kernel.internal.StoreLockerLifecycleAdapter.start(StoreLockerLifecycleAdapter.java:40)
+	at org.neo4j.kernel.lifecycle.LifeSupport$LifecycleInstance.start(LifeSupport.java:434)
+	... 11 more
+2017-05-30 02:11:30.342+0000 INFO  Neo4j Server shutdown initiated by request
+2017-05-30 02:11:33.781+0000 INFO  Remote interface available at http://localhost:7474/
+nohup: ignoring input
+2017-05-30 02:13:53.795+0000 INFO  ======== Neo4j 3.2.0 ========
+2017-05-30 02:13:54.623+0000 INFO  Starting...
+2017-05-30 02:13:57.160+0000 INFO  Bolt enabled on 127.0.0.1:7687.
+2017-05-30 02:13:57.544+0000 ERROR Failed to start Neo4j: Starting Neo4j failed: Component 'org.neo4j.server.database.LifecycleManagingDatabase@76515e7b' was successfully initialized, but failed to start. Please see attached cause exception. Starting Neo4j failed: Component 'org.neo4j.server.database.LifecycleManagingDatabase@76515e7b' was successfully initialized, but failed to start. Please see attached cause exception.
+org.neo4j.server.ServerStartupException: Starting Neo4j failed: Component 'org.neo4j.server.database.LifecycleManagingDatabase@76515e7b' was successfully initialized, but failed to start. Please see attached cause exception.
+	at org.neo4j.server.exception.ServerStartupErrors.translateToServerStartupError(ServerStartupErrors.java:68)
+	at org.neo4j.server.AbstractNeoServer.start(AbstractNeoServer.java:219)
+	at org.neo4j.server.ServerBootstrapper.start(ServerBootstrapper.java:107)
+	at org.neo4j.server.ServerBootstrapper.start(ServerBootstrapper.java:80)
+	at org.neo4j.server.CommunityEntryPoint.main(CommunityEntryPoint.java:28)
+Caused by: org.neo4j.kernel.lifecycle.LifecycleException: Component 'org.neo4j.server.database.LifecycleManagingDatabase@76515e7b' was successfully initialized, but failed to start. Please see attached cause exception.
+	at org.neo4j.kernel.lifecycle.LifeSupport$LifecycleInstance.start(LifeSupport.java:444)
+	at org.neo4j.kernel.lifecycle.LifeSupport.start(LifeSupport.java:107)
+	at org.neo4j.server.AbstractNeoServer.start(AbstractNeoServer.java:211)
+	... 3 more
+Caused by: java.lang.RuntimeException: Error starting org.neo4j.kernel.impl.factory.GraphDatabaseFacadeFactory, /home/noah/CommunityPolicing/neo4j/data/databases/graph.db
+	at org.neo4j.kernel.impl.factory.GraphDatabaseFacadeFactory.initFacade(GraphDatabaseFacadeFactory.java:209)
+	at org.neo4j.kernel.impl.factory.GraphDatabaseFacadeFactory.newFacade(GraphDatabaseFacadeFactory.java:124)
+	at org.neo4j.server.CommunityNeoServer.lambda$static$0(CommunityNeoServer.java:58)
+	at org.neo4j.server.database.LifecycleManagingDatabase.start(LifecycleManagingDatabase.java:89)
+	at org.neo4j.kernel.lifecycle.LifeSupport$LifecycleInstance.start(LifeSupport.java:434)
+	... 5 more
+Caused by: org.neo4j.kernel.lifecycle.LifecycleException: Component 'org.neo4j.kernel.internal.StoreLockerLifecycleAdapter@4f67b166' was successfully initialized, but failed to start. Please see attached cause exception.
+	at org.neo4j.kernel.lifecycle.LifeSupport$LifecycleInstance.start(LifeSupport.java:444)
+	at org.neo4j.kernel.lifecycle.LifeSupport.start(LifeSupport.java:107)
+	at org.neo4j.kernel.impl.factory.GraphDatabaseFacadeFactory.initFacade(GraphDatabaseFacadeFactory.java:205)
+	... 9 more
+Caused by: org.neo4j.kernel.StoreLockException: Store and its lock file has been locked by another process: /home/noah/CommunityPolicing/neo4j/data/databases/graph.db/store_lock. Please ensure no other process is using this database, and that the directory is writable (required even for read-only access)
+	at org.neo4j.kernel.internal.StoreLocker.storeLockException(StoreLocker.java:94)
+	at org.neo4j.kernel.internal.StoreLocker.checkLock(StoreLocker.java:80)
+	at org.neo4j.kernel.internal.StoreLockerLifecycleAdapter.start(StoreLockerLifecycleAdapter.java:40)
+	at org.neo4j.kernel.lifecycle.LifeSupport$LifecycleInstance.start(LifeSupport.java:434)
+	... 11 more
+2017-05-30 02:13:57.547+0000 INFO  Neo4j Server shutdown initiated by request
+2017-05-30 03:00:52.235+0000 INFO  Neo4j Server shutdown initiated by request
+2017-05-30 03:00:52.487+0000 INFO  Stopping...
+2017-05-30 03:00:52.883+0000 INFO  Stopped.

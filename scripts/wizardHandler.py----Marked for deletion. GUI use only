@@ -1,0 +1,61 @@
+#! /usr/bin/python3
+from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import QApplication, QWidget, QCheckBox, QFileDialog
+from PyQt5.QtGui import *
+from GUI.wizardGUI import Ui_Wizard
+import sys
+
+
+
+class my_wizard(QtWidgets.QWizard, Ui_Wizard, page_num):
+    def __init__(self):
+        super(my_wizard, self).__init__()
+        self.setupUi(self)
+        self.button(QtWidgets.QWizard.NextButton).clicked.connect(self.Next)
+        self.button(QtWidgets.QWizard.BackButton).clicked.connect(self.Back)
+    def Show_wizard(self):
+        mywizard = my_wizard()
+        mywizard.exec_()
+    def Next(self):
+        pid = self.currentId()
+        print(pid)
+
+    def Back(self,vid):
+        pid = self.currentId()
+
+def get_id(args):
+    if args == 1:
+        app = QtWidgets.QApplication(sys.argv)
+        window = my_wizard()
+        window.show()
+        sys.exit(app.exec_())
+        #add person wizard
+    elif args == 2:
+        #add group wizard
+        app = QtWidgets.QApplication(sys.argv)
+        window = my_wizard()
+        window.show()
+        sys.exit(app.exec_())
+    elif args == 3:
+        app = QtWidgets.QApplication(sys.argv)
+        window = my_wizard()
+        window.show()
+        sys.exit(app.exec_())
+        #add event wizard
+    elif args == 4:
+        app = QtWidgets.QApplication(sys.argv)
+        window = my_wizard()
+        window.show()
+        sys.exit(app.exec_())
+        #add crime wizard
+def database_init():
+    return
+
+def pull_database():
+    #should be run at the start; allows the user to create relationships
+    return
+
+def push_database():
+    return
+        
+if __name__ == "__main__":

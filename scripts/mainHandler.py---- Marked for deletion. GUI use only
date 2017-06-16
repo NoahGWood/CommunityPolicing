@@ -1,0 +1,62 @@
+#! /usr/bin/python3
+# steps to program:
+# step 1: connect to DB and query for data
+# step 2: Display lists in textBrowser (will probably switch to list widget)
+# step 3: connect to inet and get latest news
+# step 4: Select a random name from the databae and display their information
+#  name/info in Text Browser 2; list of relationships and other info
+#  description
+# step 5: Display image in graphicsView_Main_Pic
+# step 6: Display map with location
+# step 7: wait for user input.
+# Previous/Next buttons grab the previous/next Person node respectively
+# Command Line allows experienced users to perform actions directly from the window
+#  Results are shown in the 'news' webview
+# the lineEdit is used to search through the list, when an entity is clicked it
+#  will display as in step 4-6
+# Home takes back to main screen
+# Add takes to respective screens
+# Database takes to database screen (can just use webkit to connect to neo4j)
+# Blockchain takes to blockchain screen
+# May consider turning the separate screens into tabs; for now let's get the frame
+#  working
+
+from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import QApplication, QWidget, QCheckBox, QFileDialog
+from PyQt5.QtGui import *
+from GUI.dox import Ui_MainWindow
+import sys
+
+class my_window(QtWidgets.QMainWindow, Ui_MainWindow):
+    def __init__(self):
+        super(my_window, self).__init__()
+        self.setupUi(self)
+    def Show_Window(self):
+        mywindow = my_window()
+        mywindow.exec_()
+    def Next(self):
+        pid = self.currentId()
+        print(pid)
+
+    def Back(self,vid):
+        pid = self.currentId()
+
+
+
+def connect_db():
+    return
+
+def pull_database():
+    #should be run at the start; allows the user to create relationships
+    return
+
+def push_database():
+    return
+        
+if __name__ == "__main__":
+    connect_db()
+    app = QtWidgets.QApplication(sys.argv)
+    window = my_window()
+    window.show()
+    sys.exit(app.exec_())
+    

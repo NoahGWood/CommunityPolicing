@@ -2,30 +2,42 @@ CLI:
     Todo:
         Create Main Program
     InProgress:
-        Create Blockchain Module
-            found: /scripts/blockchain.py
-        Create Database Manager Module
-            found: /scripts/dbmanager.py
         Create Settings Module
             found: /scripts/settings.py
-        Create Logging/Debug Module
-            found: /scripts/loggerSetup.py
+        Create FaceRecog Module
+        Create ????
     Done:
 
-GUI:
+        Create Blockchain Module
+            found: /scripts/blockchain.py
+
+        Create Database Module
+            /scripts/dbDriver.py
+
+WebUI:
     Todo:
-        Create GUI Module
-        Create Map Module
-        Create Settings Wizard
+        Create Home Page
+        Create Menu
+            Create Home Link
+            Create Settings Menu
+                Create Blockchain Form
+                Create Database Form    
+                Create Account From
+            Create Add New Menu
+                Create Person Form
+                Create Group Form
+                Create Crime Form
+                Create Event Form
+            Create Find Menu
+                
+            
+        Create Login Page
+        
     InProgress:
-        Create "Add New" Wizard
-            found: /scripts/GUI/wizardGUI.py
-        Create CLI/Backend
-            found: /scripts
-        Create Main Window
-            found: /scripts/GUI/mainGUI.py
     Done:
-
+        Create Webserver (web2py)
+        
+===================================================================
 Installer:
     Todo:
         Create Installation Script For dpkg

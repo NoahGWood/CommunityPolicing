@@ -3,4 +3,4 @@ python3
 pyqt5
 Savoir
 
-Requires installation of MySQL-Server and Multichain (devs: http://www.multichain.com/)
+Requires installation of Neo4j and Multichain (devs: http://www.multichain.com/)
