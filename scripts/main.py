@@ -40,6 +40,7 @@ def checkModule(module):
         return True
 
 def CLI():
+    return()
     #if linux do:
 #    system("gnome-terminal -e 'bash -c \"dbdriver; exec bash\"'")
     #if windows do:
@@ -57,7 +58,7 @@ def main():
     if installed is False:
         if GUI is False:
             CLI()
-#        install()
+            #install()
         raise SystemExit
     elif installed is True:
         if GUI is False:

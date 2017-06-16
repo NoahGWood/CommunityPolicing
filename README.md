@@ -31,3 +31,5 @@ We are also looking into the possibility of a voting system to gauge the trustwo
 * Memory: 1GB RAM
 
 You'll be fine with any modern laptop running Linux. Graphics cards may increase efficiency of bulk facial recognition (e.g. during very large imports), but most people work on a single perp at a time.
+
+##### Warrant Canary says: You're fine!
