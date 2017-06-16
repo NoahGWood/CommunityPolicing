@@ -4,12 +4,6 @@
 Usage:
 settings.py <Section> <Label> <Value>
 
-Arguments:
-cmd  Commands(e.g. add, rm)
-target  Database targets
-args  See options
-
-
 Options:
 -h --help  Display this help page
 -v --version  Display version information
@@ -21,18 +15,23 @@ import configparser
 import docopt
 from py2neo import Graph, Node, Relationship, remote
 
-
 #logger settings
 logger = logging.getLogger()
 logger.setLevel(logging.DEBUG)
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 #config and file settings
 config = configparser.ConfigParser()
-f = 'settings2.ini'
-cfgfile = open(f,'r+')
-#config.read(f)
 
-def set_setting(sect,label,value):
+f = 'settings.ini'
+def check_file():
+    try:
+        cfgfile = open(f,'r+')
+        return(cfgfile)
+    except:
+        cfgfile = open(f,'w')
+        return(cfgfile)
+
+def set_setting(sect, label, value, cfgfile):
     try:
         if isinstance(sect, str): #checking if values are strings
             if isinstance(label, str):
@@ -85,22 +84,15 @@ def set_setting(sect,label,value):
                 raise Exception('Incorrect type in section: list expected got {0}'.format(sect))
     except Exception as e:
         logger.debug('set_setting in settings.py ' + str(e))
-        
 
-#section = ['a','b','c','d','e','f','g']
-#label = ['1','2','3','4','5','6','7',]
-#value = ['val1','val2','val3','val4','val5','5','False']
-#data = [section,label,value]
-
-#set_setting(*data)
-#set_setting(section,label,value)
 if __name__ == '__main__':
     try:
+        cfgfile = check_file()
         arguments = docopt.docopt(__doc__, version='dbDriver: 0.0.1')
         logger.debug(arguments)
         sect = arguments['<Section>']
         label = arguments['<Label>']
-        value = arguments['<vValue>']
-        set_setting(sect,label,value)
+        value = arguments['<Value>']
+        set_setting(sect, label, value, cfgfile)
     except docopt.DocoptExit as e:
         logger.debug(e)
